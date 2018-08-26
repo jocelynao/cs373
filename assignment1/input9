@@ -1,0 +1,14 @@
+state 1  accept
+state 0 start
+transition  0 b 3
+transition  0 b 5
+transition  0 b 1
+transition  0 b 6
+transition  2 b 3
+transition  2 b 1
+transition  4 b 5
+transition  4 b 6
+transition  6 c 1
+transition  6 c 7
+transition  5 c 1
+transition  5 c 7

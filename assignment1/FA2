@@ -1,0 +1,64 @@
+package assignment1;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
+
+public class FA{
+
+	ArrayList<Integer> acceptStates = new ArrayList<Integer>();
+	Map<String, ArrayList<Integer>> transitionsTab = new HashMap<String, ArrayList<Integer>>();
+	ArrayList<ArrayList<String>> configs = new ArrayList<ArrayList<String>>();
+	String startState = "";
+
+	public void addAccept(String state){
+		acceptStates.add(Integer.parseInt(state));
+	}
+
+	public void setStart(String s){
+		startState = s;
+	}
+
+	public void setTransitions(String s, Integer tState){
+		if (!transitionsTab.containsKey(s)){
+			transitionsTab.put(s, new ArrayList<Integer>());
+		}
+		transitionsTab.get(s).add(tState);
+		// System.out.println(transitionsTab.get(bState).size());
+		// transitionsTab.put(s, Integer.parseInt(s2));
+	}
+
+	public void print(){
+		System.out.println("Start state: " + startState);
+		System.out.println("Accept states: " + acceptStates);
+		System.out.println("Transitions table: \n");
+
+		Iterator iter = transitionsTab.entrySet().iterator();
+
+		while(iter.hasNext()){
+			// ArrayList<Integer> al = iter2.next();
+
+			Map.Entry pair = (Map.Entry)iter.next();
+
+			System.out.println(pair.getKey());
+			// String s2 = s;
+			// Integer k = itr.next();
+			
+			// System.out.print(s.charAt(0) + ", " + s.charAt(1) + " ");
+
+			// System.out.print("{");
+			// int length = pair.getValue().size();
+			// for (int i = 1; i < length; i++){
+			// 	System.out.print(pair.getValue.get(i) + ", ");
+			// }
+			// System.out.println("}");
+			// System.out.println(s.substring(0, s.length() - 1) + ", " + 
+			// 	s2.substring(s.length() - 1) + ", " + itr2.next());
+		}
+		System.out.println("\nSize of table: " + transitionsTab.size());
+	}
+
+}
+
+java assignment1.runProg input2 0000111011101001010001110000011101110100101000111000001111010011010100111110001001111011111000011111
